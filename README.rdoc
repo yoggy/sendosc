@@ -1,0 +1,54 @@
+= about
+sendosc is Open Sound Control packet sending program.
+
+= how to install
+oscpack install instructions (Mac OS X)
+ $ cd ~
+ $ wget http://oscpack.googlecode.com/files/oscpack_1_0_2.zip
+ $ unzip oscpack_1_0_2.zip
+ $ cd oscpack
+ $ cp Makefile Makefile.org
+ $ vi Makefile
+ $ diff -u Makefile.org Makefile
+ --- Makefile.org        2011-09-16 20:00:36.000000000 +0900
+ +++ Makefile    2011-09-16 21:01:45.000000000 +0900
+ @@ -63,9 +63,9 @@
+  
+  $(LIBFILENAME): $(LIBOBJECTS)
+         @#GNU/Linux case
+ -       $(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ +       @#$(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+         @#Mac OS X case
+ -       @#$(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ +       $(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+  
+  lib: $(LIBFILENAME)
+ 
+ $ make
+ $ sudo make install
+ 
+sendosc compile
+ $ cd ~
+ $ git clone git://github.com/yoggy/sendosc.git
+ $ cd sendosc
+ $ cmake .
+ $ make
+ $ sudo make install  #copy to /usr/local/bin/sendosc
+
+= usage
+ $ sendosc
+ usage : sendosc dst_host dst_port path [[type] [param]] ...
+ 
+   type
+     i : int
+     f : float
+     b : boolean (true/false)
+     s : string
+ 
+   example
+     ./sendosc 127.0.0.1 5678 /test1 i 123
+     ./sendosc 127.0.0.1 5678 /test2 f 123.45
+     ./sendosc 127.0.0.1 5678 /test3 s teststring
+     ./sendosc 127.0.0.1 5678 /test4 b true
+     ./sendosc 127.0.0.1 5678 /test5 s teststring i 123 f 123.4 b false
+
