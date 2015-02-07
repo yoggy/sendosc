@@ -1,8 +1,35 @@
 = about
 sendosc is Open Sound Control packet sending program.
 
+= usage
+ $ sendosc
+ usage : sendosc dst_host dst_port path [[type] [param]] ...
+ 
+   type
+     i : int
+     f : float
+     b : boolean (true/false)
+     s : string
+ 
+   example
+     ./sendosc 127.0.0.1 5678 /test1 i 123
+     ./sendosc 127.0.0.1 5678 /test2 f 123.45
+     ./sendosc 127.0.0.1 5678 /test3 s teststring
+     ./sendosc 127.0.0.1 5678 /test4 b true
+     ./sendosc 127.0.0.1 5678 /test5 s teststring i 123 f 123.4 b false
+
+
 = how to install
-oscpack install instructions (Mac OS X)
+== debian & ubuntu
+ $ sudo apt-get install liboscpack-dev
+ $ git clone https://github.com/yoggy/sendosc.git
+ $ cd sendosc
+ $ cmake .
+ $ make
+ $ sudo make install  #copy to /usr/local/bin/sendosc
+
+== Mac OS X
+oscpack install instructions
  $ cd ~
  $ wget http://oscpack.googlecode.com/files/oscpack_1_0_2.zip
  $ unzip oscpack_1_0_2.zip
@@ -34,29 +61,4 @@ sendosc compile
  $ cmake .
  $ make
  $ sudo make install  #copy to /usr/local/bin/sendosc
-
-== for debian
- $ sudo apt-get install liboscpack-dev
- $ git clone https://github.com/yoggy/sendosc.git
- $ cd sendosc
- $ cmake .
- $ make
- $ sudo make install  #copy to /usr/local/bin/sendosc
-
-= usage
- $ sendosc
- usage : sendosc dst_host dst_port path [[type] [param]] ...
- 
-   type
-     i : int
-     f : float
-     b : boolean (true/false)
-     s : string
- 
-   example
-     ./sendosc 127.0.0.1 5678 /test1 i 123
-     ./sendosc 127.0.0.1 5678 /test2 f 123.45
-     ./sendosc 127.0.0.1 5678 /test3 s teststring
-     ./sendosc 127.0.0.1 5678 /test4 b true
-     ./sendosc 127.0.0.1 5678 /test5 s teststring i 123 f 123.4 b false
 
