@@ -29,7 +29,15 @@ oscpack install instructions (Mac OS X)
  
 sendosc compile
  $ cd ~
- $ git clone git://github.com/yoggy/sendosc.git
+ $ git clone https://github.com/yoggy/sendosc.git
+ $ cd sendosc
+ $ cmake .
+ $ make
+ $ sudo make install  #copy to /usr/local/bin/sendosc
+
+== for debian
+ $ sudo apt-get install liboscpack-dev
+ $ git clone https://github.com/yoggy/sendosc.git
  $ cd sendosc
  $ cmake .
  $ make
