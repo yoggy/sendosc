@@ -1,5 +1,5 @@
 = sendosc
-sendosc is Open Sound Control packet sending program.
+sendosc is a simple command-line tool for sending OSC packet.
 
 = usage
  $ sendosc
