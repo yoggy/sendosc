@@ -48,13 +48,12 @@ maybe related to the patch used for 1.0.2  :
  --- Makefile.org        2011-09-16 20:00:36.000000000 +0900
  +++ Makefile    2011-09-16 21:01:45.000000000 +0900
  @@ -63,9 +63,9 @@
- 
  $(LIBFILENAME): $(LIBOBJECTS)
-        @#GNU/Linux case
--       $(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
-+       @#$(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
-        @#Mac OS X case
--       @#$(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
-+       $(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+         @#GNU/Linux case
+ -       $(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ +       @#$(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+         @#Mac OS X case
+ -       @#$(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ +       $(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
 
- lib: $(LIBFILENAME)
+  lib: $(LIBFILENAME)
