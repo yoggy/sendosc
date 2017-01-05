@@ -66,6 +66,7 @@ sudo make install
 ```
 
 ### clone, compile and install sendosc 
+#### OSX
 ```
 cd ~
 git clone https://github.com/yoggy/sendosc.git
@@ -74,3 +75,11 @@ cmake .
 make
 sudo make install  
 ```
+
+#### arch : 
+change cmakelist.txt to include /usr/local/lib
+
+export ld library to get running 
+
+LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH
