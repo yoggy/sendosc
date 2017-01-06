@@ -26,7 +26,7 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
 ```
 sudo apt-get install liboscpack-dev
 ```
-#### Mac OS X 
+#### macOS 
 ```
 cd ~
 curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscpack/oscpack_1_1_0.zip
@@ -66,7 +66,7 @@ sudo make install
 ```
 
 ### clone, compile and install sendosc 
-#### OSX
+#### debian, ubuntu , macOS
 ```
 cd ~
 git clone https://github.com/yoggy/sendosc.git
