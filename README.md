@@ -31,7 +31,7 @@ sudo apt-get install liboscpack-dev
 cd ~
 curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscpack/oscpack_1_1_0.zip
 unzip oscpack_1_1_0.zip
-cd oscpack
+cd oscpack_1_1_0
 make
 sudo make install
 ```
@@ -39,12 +39,12 @@ sudo make install
 #### Arch
 ##### get dependencies and prepare folder
 ````
-pacman -Sy
-pacman -S git curl unzip
+sudo pacman -Sy
+sudo pacman -S git curl unzip
 cd ~
 curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscpack/oscpack_1_1_0.zip
 unzip oscpack_1_1_0.zip
-cd oscpack
+cd oscpack_1_1_0
 ```
 
 ##### enable -fpic flag for shared library linking
@@ -77,9 +77,13 @@ sudo make install
 ```
 
 #### arch : 
-change cmakelist.txt to include /usr/local/lib
+```
+cd ~
+git clone https://github.com/gllmar/sendosc.git
+cd sendosc
+sudo pacman -S cmake
+cmake .
+make
+sudo make install 
+```
 
-export ld library to get running 
-
-LD_LIBRARY_PATH=/usr/local/lib
-export LD_LIBRARY_PATH
