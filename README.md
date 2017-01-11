@@ -84,6 +84,6 @@ cd sendosc
 sudo pacman -S cmake
 cmake .
 make
-sudo make install 
+sudo cp ./sendosc /usr/local/bin/sendosc
 ```
 
