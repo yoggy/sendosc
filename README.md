@@ -77,7 +77,7 @@ sudo make install
 #### arch 
 ```
 cd ~
-git clone https://github.com/gllmar/sendosc.git
+git clone https://github.com/yoggy/sendosc.git
 cd sendosc
 sudo pacman -S cmake
 cmake .
