@@ -44,7 +44,7 @@ main(int argc, char* argv[])
     // setup udp socket
     char *host = argv[1];
     unsigned short port = atoi(argv[2]);
-    UdpTransmitSocket transmitSocket(IpEndpointName(host, port));
+   osc::UdpTransmitSocket transmitSocket(osc::IpEndpointName(host, port));
     
     // setup packet
     char buf[BUF_SIZE];
