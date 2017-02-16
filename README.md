@@ -21,30 +21,29 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
 ```
 
 ## how to install
+
 ### install oscpack dependencies
+
 #### debian & ubuntu
 ```
 sudo apt-get install liboscpack-dev
 ```
+
 #### macOS 
 ```
 cd ~
-curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscpack/oscpack_1_1_0.zip
-unzip oscpack_1_1_0.zip
-cd oscpack
+git clone https://github.com/arturoc/oscpack
+cd oscpack 
 make
 sudo make install
 ```
 
-#### Arch
+#### Archlinux
 ##### get dependencies and prepare folder
 ````
-pacman -Sy
-pacman -S git curl unzip
 cd ~
-curl -O https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscpack/oscpack_1_1_0.zip
-unzip oscpack_1_1_0.zip
-cd oscpack
+git clone https://github.com/arturoc/oscpack
+cd oscpack 
 ```
 
 ##### enable -fpic flag for shared library linking
@@ -76,10 +75,14 @@ make
 sudo make install  
 ```
 
-#### arch : 
-change cmakelist.txt to include /usr/local/lib
+#### arch 
+```
+cd ~
+git clone https://github.com/yoggy/sendosc.git
+cd sendosc
+sudo pacman -S cmake
+cmake .
+make
+sudo cp ./sendosc /usr/local/bin/sendosc
+```
 
-export ld library to get running 
-
-LD_LIBRARY_PATH=/usr/local/lib
-export LD_LIBRARY_PATH
