@@ -28,7 +28,8 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
 ```
 sudo apt-get install liboscpack-dev
 ```
-#### macOS
+
+#### macOS 
 ```
 cd ~
 git clone https://github.com/arturoc/oscpack
@@ -64,7 +65,7 @@ sudo make install
 ```
 
 ### clone, compile and install sendosc 
-#### macOS
+#### debian, ubuntu , macOS
 ```
 cd ~
 git clone https://github.com/yoggy/sendosc.git
