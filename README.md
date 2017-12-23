@@ -38,6 +38,11 @@ make
 sudo make install
 ```
 
+Install cmake via [Homebrew](https://brew.sh/)
+```
+brew install cmake
+```
+
 #### Archlinux
 ##### get dependencies and prepare folder
 ````
