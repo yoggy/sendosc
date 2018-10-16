@@ -39,6 +39,8 @@ void usage()
 int
 main(int argc, char* argv[])
 {
+    using namespace osc;
+
     if (argc < 4 || (argc-4)%2 == 1) usage();
     
     // setup udp socket
@@ -49,7 +51,7 @@ main(int argc, char* argv[])
     // setup packet
     char buf[BUF_SIZE];
     memset(buf, 0, BUF_SIZE);
-    osc::OutboundPacketStream p(buf, BUF_SIZE);
+    OutboundPacketStream p(buf, BUF_SIZE);
 
     //p << osc::BeginBundleImmediate;
 
