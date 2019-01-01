@@ -4,3 +4,7 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 sendosc
+*-
+*.swp
+.DS_Store
+

@@ -20,40 +20,38 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
      ./sendosc 127.0.0.1 5678 /test5 s teststring i 123 f 123.4 b false
 ```
 
-## how to install
+## How to install
+### macOS 
+Install via [Homebrew](https://brew.sh/)
 
-### install oscpack dependencies
-
-#### debian & ubuntu
 ```
-sudo apt-get install liboscpack-dev
-```
-
-#### macOS 
-```
-cd ~
-git clone https://github.com/arturoc/oscpack
-cd oscpack 
-make
-sudo make install
+$ brew tap yoggy/oscpack
+$ brew tap yoggy/sendosc
+$ brew install sendosc
 ```
 
-Install cmake via [Homebrew](https://brew.sh/)
+### debian & ubuntu
 ```
-brew install cmake
+$ sudo apt-get install liboscpack-dev
+$ cd ~
+$ git clone https://github.com/yoggy/sendosc.git
+$ cd sendosc
+$ cmake .
+$ make
+$ sudo make install  
 ```
 
-#### Archlinux
+### Archlinux
 ##### get dependencies and prepare folder
 ````
-cd ~
-git clone https://github.com/arturoc/oscpack
-cd oscpack 
+$ cd ~
+$ git clone https://github.com/arturoc/oscpack
+$ cd oscpack 
 ````
 
 ##### enable -fpic flag for shared library linking
 ```
-nano Makefile 
+$ nano Makefile 
 ```
 change this line
 ```
@@ -65,29 +63,19 @@ COPTS = -Wall -O3 -fPIC
 ```
 ##### compile and install 
 ```
-make
-sudo make install
+$ make
+$ sudo make install
 ```
 
-### clone, compile and install sendosc 
-#### debian, ubuntu , macOS
+#### clone, compile and install sendosc 
 ```
-cd ~
-git clone https://github.com/yoggy/sendosc.git
-cd sendosc
-cmake .
-make
-sudo make install  
+$ cd ~
+$ git clone https://github.com/yoggy/sendosc.git
+$ cd sendosc
+$ sudo pacman -S cmake
+$ cmake .
+$ make
+$ sudo cp ./sendosc /usr/local/bin/sendosc
 ```
 
-#### arch 
-```
-cd ~
-git clone https://github.com/yoggy/sendosc.git
-cd sendosc
-sudo pacman -S cmake
-cmake .
-make
-sudo cp ./sendosc /usr/local/bin/sendosc
-```
 
