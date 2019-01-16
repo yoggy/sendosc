@@ -75,5 +75,27 @@ $ cmake .
 $ make
 $ sudo cp ./sendosc /usr/local/bin/sendosc
 ```
+## Windows (experimental)
+```
+> git clone https://github.com/yoggy/sendosc.git
+> cd sendosc
+> mkdir build
+> cd build
+> cmake ..
+> MSBuild.exe sendosc.vcxproj /t:clean;rebuild /p:Configuration=Release;Platform="win32"
+> cd Release
+> dir sendosc.exe
 
+ Volume in drive C is XXXXXXXX
+ Volume Serial Number is XXXX-XXXX
 
+ Directory of C:\work\sendosc\build\Release
+
+2019/01/16  20:38            18,432 sendosc.exe
+               1 File(s)         18,432 bytes
+```
+
+## Copyright and license
+Copyright (c) 2015 yoggy
+
+Released under the [MIT license](LICENSE.txt)
