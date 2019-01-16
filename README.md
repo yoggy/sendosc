@@ -76,6 +76,10 @@ $ make
 $ sudo cp ./sendosc /usr/local/bin/sendosc
 ```
 ## Windows (experimental)
+pre-built binary for windows
+
+- [sendosc-win-1.0.2.zip](https://github.com/yoggy/sendosc/releases/download/v1.0.2/sendosc-win-1.0.2.zip)
+
 ```
 > git clone https://github.com/yoggy/sendosc.git
 > cd sendosc
