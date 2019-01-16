@@ -25,9 +25,7 @@ usage : sendosc dst_host dst_port path [[type] [param]] ...
 Install via [Homebrew](https://brew.sh/)
 
 ```
-$ brew tap yoggy/oscpack
-$ brew tap yoggy/sendosc
-$ brew install sendosc
+$ brew install yoggy/tap/sendosc
 ```
 
 ### debian & ubuntu
